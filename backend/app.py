@@ -129,8 +129,7 @@ def logout():
 def get_tasks():
     if 'user_id' in session:
         user = db.session.get(User, session['user_id'])
-        tasks = [{'id': task.id, 'type': task.type, 'text': task.text,
-                  'completed': task.completed} for task in user.tasks]
+        tasks = [{'id': task.id, 'type': task.type, 'text': task.text} for task in user.tasks]
 
         return jsonify({'tasks': tasks})
 
