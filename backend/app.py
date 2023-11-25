@@ -2,20 +2,29 @@ from flask import Flask, request, jsonify, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from passlib.hash import pbkdf2_sha256
+from flask_cors import CORS
 import random
 
+# app configuration
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///health_app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'hello'
 
+# CORS configuration
+CORS_ALLOW_HEADERS = 'Content-Type'
+CORS_RESOURCES = {r'/api/*': {'origins': 'http://localhost:5173'}}
+
+CORS(app, resourses=CORS_RESOURCES)
+
+# create database
 db = SQLAlchemy(app)
 
 # Association table to match many-to-many relationship between users and tasks
 user_tasks_association = db.Table(
     'user_tasks_association',
-    db.Column('user_id', db.Integer, db.ForeignKey('user_id')),
-    db.Column('task_id', db.Integer, db.ForeignKey('task_id')),
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('task_id', db.Integer, db.ForeignKey('task.id')),
     db.Column('completed', db.Boolean, default=False)
 )
 
@@ -54,12 +63,17 @@ class Task(db.Model):
     type = db.Column(db.String(50), nullable=False)
     text = db.Column(db.Text, nullable=False)
 
+    def __init__(self, type, text):
+        self.type = type
+        self.text = text
+
     def __repr__(self):
         return f'<Task(id={self.id}, type={self.type}, text={self.text})>'
 
 
 # create tables
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 # method to get random task to send user?
 
