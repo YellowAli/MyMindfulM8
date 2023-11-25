@@ -6,28 +6,36 @@ import {
 } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
+import { useState } from "react";
 
 function App() {
+  const [currentForm, setCurrentForm] = useState('login');
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Navigate to="login" />,
+      element: <Navigate to={`/${currentForm}`} replace />,
     },
     {
       path: "login",
-      element: <Login />,
+      element: <Login setCurrentForm={setCurrentForm} />,
     },
     {
       path: "register",
-      element: <Register />,
+      element: <Register setCurrentForm={setCurrentForm} />,
     },
-    {
-      path: "home",
-      element: <Home />,
-    },
+    // other routes...
   ]);
 
-  return <RouterProvider router={router} />;
+  const toggleForm = () => {
+    setCurrentForm(currentForm === 'login' ? 'register' : 'login');
+  }
+
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;
