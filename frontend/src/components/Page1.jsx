@@ -21,6 +21,22 @@ function Page1() {
         "Make Bed",
     ]
 
+    const supportMessages3 = [
+        "Meditate For 5 minutes",
+        "Afternoon Walk or Workout",
+        "10 Minutes of Mindful Reflection",
+        "10 Minutes of Social Media Detox",
+        "Make Bed",
+    ]
+
+    const supportMessages4 = [
+        "Meditate For 5 minutes",
+        "Afternoon Walk or Workout",
+        "10 Minutes of Mindful Reflection",
+        "10 Minutes of Social Media Detox",
+        "Make Bed",
+    ]
+
     // State to hold the current support message
     const [currentSupportMessage, setCurrentSupportMessage] = useState('');
     const [currentSupportMessage2, setCurrentSupportMessage2] = useState('');
@@ -38,11 +54,11 @@ function Page1() {
     }, []);
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * supportMessages2.length);
-        setCurrentSupportMessage3(supportMessages2[randomIndex]);
+        setCurrentSupportMessage3(supportMessages3[randomIndex]);
     }, []);
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * supportMessages2.length);
-        setCurrentSupportMessage4(supportMessages2[randomIndex]);
+        setCurrentSupportMessage4(supportMessages4[randomIndex]);
     }, []);
     return (
         <div className="container">
@@ -55,21 +71,30 @@ function Page1() {
             </div>
             <div className="support">{currentSupportMessage}</div>
             <ul className="list-group">
-            <li className="list-group-item">An item</li>
-            <el className = "message">2</el>
-            <el className = "message">1</el>
-            <li className="list-group-item">A second item</li>
-            <el className = "message">3</el>
-            <el className = "message">2</el>
-            <li className="list-group-item">A third item</li>
-            <el className = "message">1</el>
-            <el className = "message">2</el>
-            <li className="list-group-item">A fourth item</li>
-            <el className = "message">4</el>
-            <el className = "message">4</el>
-            <li className="list-group-item">And a fifth one</li>
-            <el className = "message">2</el>
-            <el className = "message">1</el>
+            <li className="list-group-item">Affirmations</li>
+            <el className = "message">Affirmations, when practiced consistently, have been shown to decrease health-deteriorating stress, 
+            can be beneficial in significantly improving optimism and feelings of hope, and may also aid in the mitigation of the effects of negative emotional bias, a common feature in depressive disorders. </el>
+            <li className="list-group-item">Journaling</li>
+            <el className = "message">Journaling has been associated with reduced stress and improved mood by helping individuals process emotions and increase self-awareness.</el>
+            <li className="list-group-item">Deep Breathing</li>
+            <el className = "message">Deep breathing techniques have been linked to decreased anxiety and an enhanced relaxation response through the activation of the parasympathetic nervous system.</el>
+            <li className="list-group-item">Gratitude</li>
+            <el className = "message">Expressing gratitude consistently is correlated with long-term well-being, reduced depression, and increased happiness, fostering a positive mindset and stronger resilience.</el>
+            <li className="list-group-item">Goals</li>
+            <el class="message">
+            <div>
+            <input type="checkbox" id="goal1" name="goal1" />
+            <label for="goal1">Goal 1 Description</label>
+            </div>
+            <div>
+            <input type="checkbox" id="goal2" name="goal2" />
+            <label for="goal2">Goal 2 Description</label>
+            </div>
+            <div>
+            <input type="checkbox" id="goal3" name="goal3" />
+            <label for="goal3">Goal 3 Description</label>
+            </div>
+            </el>
             </ul>
         </div>
     );
