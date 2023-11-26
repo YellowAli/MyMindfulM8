@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Page1.css";
 
-function Page1() {
+function Page2() {
     
     // Array of support messages
     const supportMessages = [
@@ -11,39 +11,18 @@ function Page1() {
         "You are stronger than you think.",
         "Keep pushing forward.",
         "Take it one step at a time."
+        // Add more messages as you see fit
     ];
-
-    const supportMessages2 = [
-        "Meditate For 5 minutes",
-        "Afternoon Walk or Workout",
-        "10 Minutes of Mindful Reflection",
-        "10 Minutes of Social Media Detox",
-        "Make Bed",
-    ]
 
     // State to hold the current support message
     const [currentSupportMessage, setCurrentSupportMessage] = useState('');
-    const [currentSupportMessage2, setCurrentSupportMessage2] = useState('');
-    const [currentSupportMessage3, setCurrentSupportMessage3] = useState('');
-    const [currentSupportMessage4, setCurrentSupportMessage4] = useState('');
+
     // Function to select a random support message
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * supportMessages.length);
         setCurrentSupportMessage(supportMessages[randomIndex]);
     }, []); // The empty array ensures this effect runs only once when the component mounts
 
-    useEffect(() => {
-        const randomIndex = Math.floor(Math.random() * supportMessages2.length);
-        setCurrentSupportMessage2(supportMessages2[randomIndex]);
-    }, []);
-    useEffect(() => {
-        const randomIndex = Math.floor(Math.random() * supportMessages2.length);
-        setCurrentSupportMessage3(supportMessages2[randomIndex]);
-    }, []);
-    useEffect(() => {
-        const randomIndex = Math.floor(Math.random() * supportMessages2.length);
-        setCurrentSupportMessage4(supportMessages2[randomIndex]);
-    }, []);
     return (
         <div className="container">
             <div className="header-container">Your current focus is:</div>
@@ -62,17 +41,17 @@ function Page1() {
             <el className = "message">3</el>
             <el className = "message">2</el>
             <li className="list-group-item">A third item</li>
-            <el className = "message">1</el>
-            <el className = "message">2</el>
+            <el className = "mesage">1</el>
+            <el className = "mesage">2</el>
             <li className="list-group-item">A fourth item</li>
-            <el className = "message">4</el>
-            <el className = "message">4</el>
-            <li className="list-group-item">And a fifth one</li>
-            <el className = "message">2</el>
-            <el className = "message">1</el>
+            <el className = "mesage">4</el>
+            <el className = "mesage">4</el>
+            <li className="list-group-item2">And a fifth one</li>
+            <el className = "mesage">2</el>
+            <el className = "mesage">1</el>
             </ul>
         </div>
     );
 }
 
-export default Page1;
+export default Page2;
