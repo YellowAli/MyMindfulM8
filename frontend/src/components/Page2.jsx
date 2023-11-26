@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Page1.css";
 
-function Page1() {
+function Page2() {
     
     // Array of support messages
     const supportMessages = [
@@ -41,17 +41,17 @@ function Page1() {
             <el className = "message">3</el>
             <el className = "message">2</el>
             <li className="list-group-item">A third item</li>
-            <el className = "message">1</el>
-            <el className = "message">2</el>
+            <el className = "mesage">1</el>
+            <el className = "mesage">2</el>
             <li className="list-group-item">A fourth item</li>
-            <el className = "message">4</el>
-            <el className = "message">4</el>
-            <li className="list-group-item">And a fifth one</li>
-            <el className = "message">2</el>
-            <el className = "message">1</el>
+            <el className = "mesage">4</el>
+            <el className = "mesage">4</el>
+            <li className="list-group-item2">And a fifth one</li>
+            <el className = "mesage">2</el>
+            <el className = "mesage">1</el>
             </ul>
         </div>
     );
 }
 
-export default Page1;
+export default Page2;

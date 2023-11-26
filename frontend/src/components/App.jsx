@@ -8,6 +8,8 @@ import Login from "./Login";
 import Register from "./Register";
 import Home from "./Home";
 import Page1 from "./Page1";
+import Page2 from "./Page2";
+import Page3 from "./Page3";
 
 import { useState, useEffect } from "react";
 
@@ -55,6 +57,16 @@ function App() {
       path: "/pg1",
       element: isAuthenticated ? <Page1 /> : <Navigate to="/login" />,
     },
+    {
+      path: "/pg2",
+      element: <Page2 setCurrentForm={setCurrentForm}/>,
+    },
+    {
+      path: "/pg3",
+      element: <Page3 setCurrentForm={setCurrentForm}/>,
+    },
+  
+  
   ]);
 
   if (!isLoading)
