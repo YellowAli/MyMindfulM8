@@ -1,3 +1,9 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .App {
     text-align: center;
     display: flex;
@@ -8,6 +14,8 @@
     background-image: linear-gradient(79deg, #7439db, #C66fbc 48%, #f7944d);
     margin: 0;
     padding: 0;
+    background-size: cover;
+    background-position: center;
 }
 
 .auth-form-container label {
@@ -24,7 +32,25 @@
     align-items: center;
     justify-content: center;
     padding:2rem;
-    border: 1px solid white;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* Removed flex-grow */
+}
+
+.Card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:2rem;
+    border: none;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);

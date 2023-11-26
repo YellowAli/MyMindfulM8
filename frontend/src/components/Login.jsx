@@ -19,7 +19,7 @@ const Login = () => {
                 <input value={user} onChange={(e) => setUserName(e.target.value)} type="text" placeholder="username" id="user" name="user"/>
                 <label htmlFor="password">Password</label>
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*********" id="password" name="password"/>
-                <button onClick={() => navigate('/pg1')}>Login</button>
+                <button type='submit' onClick={() => navigate('/home')}>Login</button>
             </form>
             <button className='link-btn' onClick={() => navigate('/register')}>Don't have an account? Register here</button>
         </div>

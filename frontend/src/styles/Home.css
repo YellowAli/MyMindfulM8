@@ -1,0 +1,66 @@
+.Card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:2rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(42, 225, 88, 0.383);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-right: 20px;
+    /* Removed flex-grow */
+}
+
+.Card1-Container{
+    display: flex;
+  justify-content: space-between;
+}
+
+.Card2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:2rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-right: 20px;
+    /* Removed flex-grow */
+}
+
+.Card3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:2rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* Removed flex-grow */
+}
+
+.header {
+    position: relative;
+    top: -150px; /* Adjust the value as needed */
+    font-family:'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
