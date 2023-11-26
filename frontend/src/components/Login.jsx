@@ -15,7 +15,9 @@ const Login = ({ setIsAuthenticated }) => {
         username: user,
         password: pass,
       });
+
       if (response.status == 200) {
+        localStorage.setItem("authToken", response.data.token);
         setIsAuthenticated(true);
         navigate("/home");
       } else if (response.status == 401) {
