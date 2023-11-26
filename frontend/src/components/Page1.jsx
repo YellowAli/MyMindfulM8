@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Page1.css";
+import "../styles/Page2.css";
 import axios from "axios";
 
 function Page1({ setIsAuthenticated }) {
@@ -78,7 +78,7 @@ function Page1({ setIsAuthenticated }) {
   return (
     <div className="container">
       <div className="header-container">
-        Your current focus is: <br />
+        Your Current Focus is: <br />
         Mental Health
       </div>
       <div className="icon-container">

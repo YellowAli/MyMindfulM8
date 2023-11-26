@@ -44,23 +44,6 @@ body, html {
     /* Removed flex-grow */
 }
 
-.Card1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding:2rem;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    /* Removed flex-grow */
-}
 
 @media screen and (min-width: 600px) {
     .auth-form-container {
