@@ -9,10 +9,26 @@ import Register from "./Register";
 import Home from "./Home";
 import Page1 from "./Page1";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false); // not authenticated initially
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Check for authentication token on page load
+  useEffect(() => {
+    const authToken = localStorage.getItem("authToken");
+
+    console.log(authToken);
+
+    if (authToken) {
+      // Set authenticated state
+      console.log("setting authenticated to true");
+      setIsAuthenticated(true);
+    }
+
+    setIsLoading(false);
+  }, []);
 
   const router = createBrowserRouter([
     {
@@ -20,7 +36,7 @@ function App() {
       element: isAuthenticated ? (
         <Navigate to="/home" replace />
       ) : (
-        <Navigate to={'/login'} replace />
+        <Navigate to={"/login"} replace />
       ),
     },
     {
@@ -41,11 +57,12 @@ function App() {
     },
   ]);
 
-  return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
-  );
+  if (!isLoading)
+    return (
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    );
 }
 
 export default App;
