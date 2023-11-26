@@ -90,8 +90,9 @@ button:hover, button:focus {
 }
 
 .link-btn:hover, .link-btn:focus {
-    color: #f7944d; /* Changes text color on hover/focus */
-    cursor: pointer;
+    background-color: #f7944d; /* Changes background on hover/focus */
+    /* Changed color to a contrasting one for visibility */
+    color: #000; /* Changes text color on hover/focus to black */
 }
 
 .register-link {
@@ -102,8 +103,9 @@ button:hover, button:focus {
 }
 
 .register-link:hover, .register-link:focus {
-    color: #f7944d; /* Changes text color on hover/focus */
-    cursor: pointer;
+    background-color: #f7944d; /* Changes background on hover/focus */
+    /* Changed color to a contrasting one for visibility */
+    color: #000; /* Changes text color on hover/focus to black */
 }
 
 :focus-visible {
