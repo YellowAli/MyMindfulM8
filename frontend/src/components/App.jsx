@@ -7,10 +7,9 @@ import {
 import Login from "./Login";
 import Register from "./Register";
 import Home from "./Home";
-import Page1 from "./Page1";
-import Page2 from "./Page2";
-import Page3 from "./Page3";
-
+import Mental from "./Mental";
+import Social from "./Social";
+import Physical from "./Physical";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -55,16 +54,16 @@ function App() {
       element: <Home setIsAuthenticated={setIsAuthenticated} />,
     },
     {
-      path: "/pg1",
-      element: <Page1 setIsAuthenticated={setIsAuthenticated} />,
+      path: "/mental",
+      element: <Mental setIsAuthenticated={setIsAuthenticated} />,
     },
     {
-      path: "/pg2",
-      element: <Page2 setIsAuthenticated={setIsAuthenticated} />,
+      path: "/social",
+      element: <Social setIsAuthenticated={setIsAuthenticated} />,
     },
     {
-      path: "/pg3",
-      element: <Page3 setIsAuthenticated={setIsAuthenticated} />,
+      path: "/physical",
+      element: <Physical setIsAuthenticated={setIsAuthenticated} />,
     },
   ]);
 

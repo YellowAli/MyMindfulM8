@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Page1.css";
+import "../styles/Page2.css";
 import axios from "axios";
 
-function Page2({ setIsAuthenticated }) {
+function Mental({ setIsAuthenticated }) {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -80,7 +79,7 @@ function Page2({ setIsAuthenticated }) {
     <div className="container">
       <div className="header-container">
         Your Current Focus is: <br />
-        Social health
+        Mental Health
       </div>
       <div className="icon-container">
         <div className="heart-icon"></div>
@@ -91,24 +90,24 @@ function Page2({ setIsAuthenticated }) {
         <div className="line-container">
           <div className="Affirmations">
             <div className="card-body">
-              <h3 className="card-title">Kindness</h3>
+              <h3 className="card-title">Affirmations</h3>
               <p className="card-text">
-                "Kindness has been linked to enhanced social relationships and
-          increased feelings of social support, promoting a sense of belonging
-          and reducing feelings of isolation.
-"
+                "Affirmations, when practiced consistently, have been shown to
+                decrease health-deteriorating stress, can be beneficial in
+                significantly improving optimism and feelings of hope, and may
+                also aid in the mitigation of the effects of negative emotional
+                bias, a common feature in depressive disorders."
               </p>
             </div>
           </div>
 
-          <div className="Journaling ">
+          <div className="Journaling">
             <div className="card-body">
-              <h3 className="card-title">Call A Friend</h3>
+              <h3 className="card-title">Journaling</h3>
               <p className="card-text">
-                "Calling a friend can reinforce social bonds and provide a sense of
-          connection, which is crucial for social well-being and combating
-          loneliness.
-"
+                "Journaling has been associated with reduced stress and improved
+                mood by helping individuals process emotions and increase
+                self-awareness."
               </p>
             </div>
           </div>
@@ -117,24 +116,22 @@ function Page2({ setIsAuthenticated }) {
         <div className="line-container">
           <div className="DeepBreathing">
             <div className="card-body">
-              <h3 className="card-title">Volunteer</h3>
+              <h3 className="card-title">Deep Breathing</h3>
               <p className="card-text">
-                "Volunteering is associated with a stronger sense of community,
-          improved empathy, and heightened feelings of social contribution,
-          fostering a network of mutual aid and support.
-"
+                "Deep breathing techniques have been linked to decreased anxiety
+                and an enhanced relaxation response through the activation of
+                the parasympathetic nervous system."
               </p>
             </div>
           </div>
 
           <div className="Gratitude">
             <div className="card-body">
-              <h3 className="card-title">Digital-Detox</h3>
+              <h3 className="card-title">Gratitude</h3>
               <p className="card-text">
-                "A digital detox can lead to improved face-to-face interactions and
-          presence, allowing for deeper social engagements and reducing the
-          sense of social fatigue.
-"
+                "Expressing gratitude consistently is correlated with long-term
+                well-being, reduced depression, and increased happiness,
+                fostering a positive mindset and stronger resilience."
               </p>
             </div>
           </div>
@@ -153,19 +150,16 @@ function Page2({ setIsAuthenticated }) {
             <input type="checkbox" id="goal3" name="goal3" />
             <label for="goal3">{currentSupportMessage4}</label>
           </div>
-          </div>
-          </div>
-
-      <div className="buttons">
+        </div>
+      </div>
       <button className="btn11" onClick={() => navigate("/home")}>
         Home
       </button>
       <button className="btn111" onClick={handleLogout}>
         Log Out
       </button>
-      </div>
     </div>
   );
 }
 
-export default Page2;
+export default Mental;

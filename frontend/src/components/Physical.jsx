@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Page2.css";
 import axios from "axios";
 
-function Page3({ setIsAuthenticated }) {
+function Physical({ setIsAuthenticated }) {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -92,8 +92,9 @@ function Page3({ setIsAuthenticated }) {
             <div className="card-body">
               <h3 className="card-title">Regular Exercise</h3>
               <p className="card-text">
-                "Engage in activities like walking, running, or strength training to maintain a 
-                healthy weight, strengthen muscles, and boost mood, promoting overall well-being."
+                "Engage in activities like walking, running, or strength
+                training to maintain a healthy weight, strengthen muscles, and
+                boost mood, promoting overall well-being."
               </p>
             </div>
           </div>
@@ -102,8 +103,9 @@ function Page3({ setIsAuthenticated }) {
             <div className="card-body">
               <h3 className="card-title">Balanced Nutrition</h3>
               <p className="card-text">
-                "Consume a diverse, nutrient-rich diet with proteins, carbs, fats, and vitamins to 
-                support energy levels, immune function, and achieve optimal health."
+                "Consume a diverse, nutrient-rich diet with proteins, carbs,
+                fats, and vitamins to support energy levels, immune function,
+                and achieve optimal health."
               </p>
             </div>
           </div>
@@ -114,8 +116,9 @@ function Page3({ setIsAuthenticated }) {
             <div className="card-body">
               <h3 className="card-title">Adequate Sleep</h3>
               <p className="card-text">
-                "Aim for 7-9 hours of quality sleep per night to facilitate physical recovery, 
-                enhance cognitive function, and promote overall health and vitality."
+                "Aim for 7-9 hours of quality sleep per night to facilitate
+                physical recovery, enhance cognitive function, and promote
+                overall health and vitality."
               </p>
             </div>
           </div>
@@ -124,8 +127,9 @@ function Page3({ setIsAuthenticated }) {
             <div className="card-body">
               <h3 className="card-title">Stress Management</h3>
               <p className="card-text">
-                "Practice stress-reducing activities like mindfulness or deep breathing to 
-                maintain hormonal balance, improve mental health, and prevent stress-related health issues."
+                "Practice stress-reducing activities like mindfulness or deep
+                breathing to maintain hormonal balance, improve mental health,
+                and prevent stress-related health issues."
               </p>
             </div>
           </div>
@@ -144,8 +148,8 @@ function Page3({ setIsAuthenticated }) {
             <input type="checkbox" id="goal3" name="goal3" />
             <label for="goal3">{currentSupportMessage4}</label>
           </div>
-          </div>
-          </div>
+        </div>
+      </div>
       <button className="btn11" onClick={() => navigate("/home")}>
         Home
       </button>
@@ -156,4 +160,4 @@ function Page3({ setIsAuthenticated }) {
   );
 }
 
-export default Page3;
+export default Physical;
