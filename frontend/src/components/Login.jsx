@@ -6,9 +6,13 @@ const Login = () => {
     const [pass, setPass] = useState('');
     const navigate = useNavigate(); // Hook to navigate programmatically
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(user);
+
+        
+        
+        // add logic here
+
     }
 
     return (
@@ -16,10 +20,10 @@ const Login = () => {
             <h2>Login</h2>
             <form className='login-form' onSubmit={handleSubmit}>
                 <label htmlFor="user">Username</label>
-                <input value={user} onChange={(e) => setUserName(e.target.value)} type="text" placeholder="username" id="user" name="user"/>
+                <input value={user} onChange={(e) => setUserName(e.target.value)} type="text" placeholder="username" id="user" name="user" required />
                 <label htmlFor="password">Password</label>
-                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*********" id="password" name="password"/>
-                <button type='submit' onClick={() => navigate('/home')}>Login</button>
+                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*********" id="password" name="password" required />
+                <button type='submit'>Login</button>
             </form>
             <button className='link-btn' onClick={() => navigate('/register')}>Don't have an account? Register here</button>
         </div>
