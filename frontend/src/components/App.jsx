@@ -33,7 +33,7 @@ function App() {
     },
     {
       path: "/pg1",
-      element: <Page1/>,
+      element: <Page1 setCurrentForm={setCurrentForm}/>,
     },
   ]);
   
