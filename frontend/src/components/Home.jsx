@@ -4,14 +4,29 @@ import image from "../Images/Group-716-1.png";
 import image2 from "../Images/healthy-fitness-girl-doing-aerobics-in-the-gym-illustration-in-doodle-style-png.png";
 import image3 from "../Images/happy-friends-posing-together-png.webp";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Home() {
+function Home({setIsAuthenticated}) {
   const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post("http://localhost:5000/api/logout");
+
+      if (response.status == 200) {
+        localStorage.removeItem("authToken");
+        setIsAuthenticated(false);
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
-      <div className="header">
-        <h1>Welcome Back</h1>
-      </div>
+      
+        <h1 className="header">Welcome Back</h1>
 
       <div className="Card1-Container">
         <div className="Card1">
@@ -69,7 +84,7 @@ function Home() {
         </div>
       </div>
       <div className="logout">
-        <button className="Logout" onClick={() => navigate("/login")}>
+        <button className="Logout" onClick={handleLogout}>
           Logout
         </button>
       </div>

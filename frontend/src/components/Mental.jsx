@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Page2.css";
+import "../styles/Pages.css";
 import axios from "axios";
 
 function Mental({ setIsAuthenticated }) {
@@ -151,13 +151,15 @@ function Mental({ setIsAuthenticated }) {
             <label for="goal3">{currentSupportMessage4}</label>
           </div>
         </div>
+        <div className="buttonContainer">
+          <button className="btn11" onClick={() => navigate("/home")}>
+            Home
+          </button>
+          <button className="btn111" onClick={handleLogout}>
+            Log Out
+          </button>
+        </div>
       </div>
-      <button className="btn11" onClick={() => navigate("/home")}>
-        Home
-      </button>
-      <button className="btn111" onClick={handleLogout}>
-        Log Out
-      </button>
     </div>
   );
 }
