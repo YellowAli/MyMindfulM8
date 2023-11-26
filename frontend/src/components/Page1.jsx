@@ -150,6 +150,8 @@ function Page1({ setIsAuthenticated }) {
             <input type="checkbox" id="goal3" name="goal3" />
             <label for="goal3">{currentSupportMessage4}</label>
           </div>
+          </div>
+          </div>
       <button className="btn11" onClick={() => navigate("/home")}>
         Home
       </button>
