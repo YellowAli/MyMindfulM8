@@ -17,12 +17,12 @@ function Home() {
         <div className="Card1">
           <img src={image} className="card-img-top" alt="Card 1" />
           <div className="card-body">
-            <h3 className="card-title">Mental Health</h3>
+            <h3 className="card-title">Mental Health</h3> 
+          </div>
             <p className="card-text">Prioritizing mental health is essential for overall well-being, as it significantly influences our thoughts, emotions, and behaviors,impacting our ability to lead fulfilling lives.</p>
             <button className='MentalHealthLink' onClick={() => navigate('/pg1')}>Start your Journey</button>
         </div>
         </div>
-    
 
         <div className="Card2">
           <img src={image2} className="card-img-top" alt="Card 2" />
@@ -40,12 +40,7 @@ function Home() {
             <p className="card-text">"Cultivating a social life adds joy and connection to your journey. It's the heart of memorable moments, support in tough times, and the essence of a well-rounded, fulfilling life."</p>
             <a href="#" className="btn btn-primary">Go somewhere</a>
         </div>
-        </div>
-        </div>
-
-      
-
-      
+      </div>
     </>
   );
 }

@@ -9,39 +9,60 @@ import Register from "./Register";
 import Home from "./Home";
 import Page1 from "./Page1";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login');
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // not authenticated initially
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Check for authentication token on page load
+  useEffect(() => {
+    const authToken = localStorage.getItem("authToken");
+
+    console.log(authToken);
+
+    if (authToken) {
+      // Set authenticated state
+      console.log("setting authenticated to true");
+      setIsAuthenticated(true);
+    }
+
+    setIsLoading(false);
+  }, []);
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Navigate to={`/${currentForm}`} replace />,
+      element: isAuthenticated ? (
+        <Navigate to="/home" replace />
+      ) : (
+        <Navigate to={"/login"} replace />
+      ),
     },
     {
       path: "/login",
-      element: <Login setCurrentForm={setCurrentForm} />,
+      element: <Login setIsAuthenticated={setIsAuthenticated} />,
     },
     {
       path: "/register",
-      element: <Register setCurrentForm={setCurrentForm} />,
+      element: <Register />,
     },
     {
       path: "/home",
-      element: <Home setCurrentForm={setCurrentForm} />,
+      element: isAuthenticated ? <Home /> : <Navigate to="/login" />,
     },
     {
       path: "/pg1",
-      element: <Page1 setCurrentForm={setCurrentForm}/>,
+      element: isAuthenticated ? <Page1 /> : <Navigate to="/login" />,
     },
   ]);
-  
-  return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
-  );
+
+  if (!isLoading)
+    return (
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    );
 }
 
 export default App;
