@@ -15,7 +15,7 @@
     right: 40%;
     padding-left: 5px;
     padding-right: 5px;
-    margin-top: 20px;
+    margin-top: 0px;
     border: 3px solid black;
     border-bottom: 0px;
     animation: slideFromTop 0.5s ease-out forwards;/* Commented out for testing */
@@ -51,7 +51,7 @@
   
   .heart-icon {
     display: block;
-    width: 100%;
+    width: 120%;
     height: 100%;
     background: url('../Images2/IMG.png') no-repeat center center;
     background-size: contain;
@@ -120,6 +120,60 @@
   animation: slideFromLeft 0.5s ease-out forwards;
 }
   
+.btn11 {
+  position: absolute;
+  right: 20px; /* Adjust as needed for right margin */
+  bottom: 20px; /* Adjust as needed for bottom margin */
+  padding: 10px 20px; /* Padding for size */
+  background-color: #f7944d; /* Color to match your theme */
+  color: white; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth background and transform transition */
+}
+
+.btn11:hover {
+  background-color: #7439db; /* Darker shade on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Make sure the button does not overlap content on smaller screens */
+@media (max-width: 600px) {
+  .btn11 {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+.btn111 {
+  position: absolute;
+  right: 110px; /* Adjust as needed for right margin */
+  bottom: 20px; /* Adjust as needed for bottom margin */
+  padding: 10px 20px; /* Padding for size */
+  background-color: #f7944d; /* Color to match your theme */
+  color: white; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth background and transform transition */
+}
+
+.btn111:hover {
+  background-color: #7439db; /* Darker shade on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Make sure the button is responsive and doesn't overlap content on smaller screens */
+@media (max-width: 600px) {
+  .btn111 {
+    left: 10px;
+    top: 10px;
+  }
+}
+
   /* Keyframes for the slide-in animations */
   @keyframes slideFromTop {
     from { transform: translateY(-100%); opacity: 0; }
