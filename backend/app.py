@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from passlib.hash import pbkdf2_sha256
 from flask_cors import CORS
+import jwt
+import datetime
 import random
 
 # app configuration
@@ -115,9 +117,12 @@ def login():
 
     user = User.query.filter_by(username=username).first()
 
+    token = jwt.encode({'user': user, 'exp': datetime.datetime.now(
+    ) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'])
+
     if user and user.check_password(password):
         session['user_id'] = user.id
-        return jsonify({'message': 'Login successful'}), 200
+        return jsonify({'token': token, 'message': 'Login successful'}), 200
 
     return jsonify({'message': 'Invalid credentials'}), 401
 
