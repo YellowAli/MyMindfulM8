@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Page1.css";
 
 function Page1() {
-    
+    const navigate = useNavigate();
     // Array of support messages
     const supportMessages = [
         "Let's try to turn that frown upside down.",
@@ -96,6 +96,8 @@ function Page1() {
             </div>
             </el>
             </ul>
+            <button className="btn11" onClick={() => navigate('/home')}>Home</button>
+            <button className="btn111" onClick={() => navigate('/login')}>Log Out</button>
         </div>
     );
 }

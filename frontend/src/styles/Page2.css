@@ -1,0 +1,196 @@
+.container2 {
+    font-family: 'Arial', sans-serif;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    text-align: center;
+  }
+  
+  .header-container2 {
+    position: relative;
+    font-size: 40px;
+    padding: 5px 0;
+    right: 40%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 20px;
+    border: 3px solid black;
+    border-bottom: 0px;
+    animation: slideFromTop 0.5s ease-out forwards;/* Commented out for testing */
+  }
+  
+  .support2 {
+    position: absolute;
+    font-size: 20px;
+    left: 20px;
+    top: 20%;
+    animation: slideFromTop 0.5s ease-out forwards; /* Slide from top animation */
+  }
+  
+  .focus-container2 {
+    position: relative;
+    top: 100%;
+    right: 40%;
+    font-size: 34px;
+    margin-top: 0px;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    animation: slideFromTop 0.5s ease-out forwards;
+  }
+  
+  .icon-container2 {
+    position: absolute;
+    right: 50px;
+    height: 190px;
+    width: 180px;
+    animation: float 3s ease-in-out infinite, slideFromRight 0.5s ease-out forwards; /* Float and slide from right animation */
+  }
+  
+  .heart-icon2 {
+    display: block;
+    width: 120%;
+    height: 100%;
+    background: url('../Images2/download32.png') no-repeat center center;
+    background-size: contain;
+    animation: float 3s ease-in-out infinite; /* Only apply the floating animation here */
+}
+
+.list-group2 {
+  position: absolute;
+  font-size: 20px;
+  top: 25%; 
+  left: 20px; 
+  width: calc(100% - 40px); 
+  padding-left: 0; 
+  list-style-type: none; 
+  text-align: left; 
+  animation: slideFromLeft 0.5s ease-out forwards;
+}
+
+.list-group-item2 {
+  border-bottom: 3px solid rgb(133, 6, 6);
+  display: block;
+  clear: both;
+  opacity: 0; 
+  margin-bottom: 5px; 
+}
+
+
+.message2 {
+  display: block; 
+  font-size: 18.5px;
+  opacity: 1; 
+  margin-bottom: 5px; 
+  animation: slideFromLeft 0.5s ease-out forwards;
+}
+
+.message2 div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Spacing between checklist items */
+}
+
+.message2 input[type="checkbox"] {
+  margin-right: 10px; /* Spacing between checkbox and label */
+}
+
+.message2 label {
+  font-size: 16px; /* Example font size, adjust as needed */
+  color: black; /* Label text color */
+}
+
+/* Delay the animation for each list item */
+.list-group-item2:nth-child(1) { animation-delay: 0.3s; }
+.list-group-item2:nth-child(2) { animation-delay: 0.3s; }
+.list-group-item2:nth-child(3) { animation-delay: 0.6s; }
+.list-group-item2:nth-child(4) { animation-delay: 0.6s; }
+.list-group-item2:nth-child(5) { animation-delay: 0.9s; }
+.list-group-item2:nth-child(6) { animation-delay: 0.9s; }
+.list-group-item2:nth-child(7) { animation-delay: 1.2s; }
+.list-group-item2:nth-child(8) { animation-delay: 1.2s; }
+.list-group-item2:nth-child(9) { animation-delay: 1.5s; }
+.list-group-item2:nth-child(10) { animation-delay: 1.5s; }
+
+
+/* Apply the slideFromLeft animation to each list item */
+.list-group-item2 {
+  animation: slideFromLeft 0.5s ease-out forwards;
+}
+
+.btn22 {
+  position: absolute;
+  right: 20px; /* Adjust as needed for right margin */
+  bottom: 20px; /* Adjust as needed for bottom margin */
+  padding: 10px 20px; /* Padding for size */
+  background-color: #f7944d; /* Color to match your theme */
+  color: white; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth background and transform transition */
+}
+
+.btn22:hover {
+  background-color: #7439db; /* Darker shade on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Make sure the button does not overlap content on smaller screens */
+@media (max-width: 600px) {
+  .btn22 {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+  
+.btn222 {
+  position: absolute;
+  right: 110px; /* Adjust as needed for right margin */
+  bottom: 20px; /* Adjust as needed for bottom margin */
+  padding: 10px 20px; /* Padding for size */
+  background-color: #f7944d; /* Color to match your theme */
+  color: white; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth background and transform transition */
+}
+
+.btn222:hover {
+  background-color: #7439db; /* Darker shade on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Make sure the button is responsive and doesn't overlap content on smaller screens */
+@media (max-width: 600px) {
+  .btn222 {
+    left: 10px;
+    top: 10px;
+  }
+}
+  /* Keyframes for the slide-in animations */
+  @keyframes slideFromTop {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes slideFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes slideFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  /* Keyframes for the floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
