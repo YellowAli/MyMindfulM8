@@ -26,7 +26,7 @@ function Page1() {
 
     return (
         <div className="container">
-            <div className="header">Your current focus is:</div>
+            <div className="header-container">Your current focus is:</div>
             <div className="focus-container">
                 <div className="focus">Mental health</div>
             </div>
