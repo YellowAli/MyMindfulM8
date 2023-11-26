@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Page1.css";
 
 function Page1() {
-    const navigate = useNavigate();
     
     // Array of support messages
     const supportMessages = [
@@ -26,7 +25,7 @@ function Page1() {
 
     return (
         <div className="container">
-            <div className="header">Your current focus is:</div>
+            <div className="header-container">Your current focus is:</div>
             <div className="focus-container">
                 <div className="focus">Mental health</div>
             </div>
@@ -34,13 +33,23 @@ function Page1() {
                 <div className="heart-icon"></div>
             </div>
             <div className="support">{currentSupportMessage}</div>
-            <div className="help">
-              <div>Affirmations</div>
-              <div>Journalling</div>
-              <div>Deep Breathing</div>
-              <div>Goals</div>
-              <div>Gratitude</div>
-            </div>
+            <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <el class = "message">2</el>
+            <el class = "message">1</el>
+            <li class="list-group-item">A second item</li>
+            <el class = "message">3</el>
+            <el class = "message">2</el>
+            <li class="list-group-item">A third item</li>
+            <el class = "message">1</el>
+            <el class = "message">2</el>
+            <li class="list-group-item">A fourth item</li>
+            <el class = "message">4</el>
+            <el class = "message">4</el>
+            <li class="list-group-item">And a fifth one</li>
+            <el class = "message">2</el>
+            <el class = "message">1</el>
+            </ul>
         </div>
     );
 }
