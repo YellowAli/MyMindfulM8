@@ -7,6 +7,8 @@ import {
 import Login from "./Login";
 import Register from "./Register";
 import Home from "./Home";
+import Page1 from "./Page1";
+
 import { useState } from "react";
 
 function App() {
@@ -29,15 +31,12 @@ function App() {
       path: "/home",
       element: <Home setCurrentForm={setCurrentForm} />,
     },
-    // other routes...
+    {
+      path: "/pg1",
+      element: <Page1/>,
+    },
   ]);
-
-  const toggleForm = () => {
-    setCurrentForm(currentForm === 'login' ? 'register' : 'login');
-  }
-
   
-
   return (
     <div className="App">
       <RouterProvider router={router} />
