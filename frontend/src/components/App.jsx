@@ -12,31 +12,35 @@ import Page1 from "./Page1";
 import { useState } from "react";
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login');
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // not authenticated initially
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Navigate to={`/${currentForm}`} replace />,
+      element: isAuthenticated ? (
+        <Navigate to="/home" replace />
+      ) : (
+        <Navigate to={'/login'} replace />
+      ),
     },
     {
       path: "/login",
-      element: <Login setCurrentForm={setCurrentForm} />,
+      element: <Login setIsAuthenticated={setIsAuthenticated} />,
     },
     {
       path: "/register",
-      element: <Register setCurrentForm={setCurrentForm} />,
+      element: <Register />,
     },
     {
       path: "/home",
-      element: <Home setCurrentForm={setCurrentForm} />,
+      element: isAuthenticated ? <Home /> : <Navigate to="/login" />,
     },
     {
       path: "/pg1",
-      element: <Page1/>,
+      element: isAuthenticated ? <Page1 /> : <Navigate to="/login" />,
     },
   ]);
-  
+
   return (
     <div className="App">
       <RouterProvider router={router} />
