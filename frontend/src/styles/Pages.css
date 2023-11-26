@@ -93,7 +93,7 @@
   padding-right: 5px;
   margin-top: -150px;
   animation: slideFromTop 0.5s ease-out forwards; /* Commented out for testing */
-  color: whitesmoke;
+  color: black;
   font-family: Cochin, Georgia, Times, "Times New Roman", serif;
 }
 

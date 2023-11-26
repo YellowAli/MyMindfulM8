@@ -25,9 +25,8 @@ function Home({setIsAuthenticated}) {
 
   return (
     <>
-      <div className="header">
-        <h1>Welcome Back</h1>
-      </div>
+      
+        <h1 className="header">Welcome Back</h1>
 
       <div className="Card1-Container">
         <div className="Card1">
