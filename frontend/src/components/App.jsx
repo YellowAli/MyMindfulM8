@@ -59,14 +59,12 @@ function App() {
     },
     {
       path: "/pg2",
-      element: <Page2 setCurrentForm={setCurrentForm}/>,
+      element: isAuthenticated ? <Page2 /> : <Navigate to="/login" />,
     },
     {
       path: "/pg3",
-      element: <Page3 setCurrentForm={setCurrentForm}/>,
+      element: isAuthenticated ? <Page3 /> : <Navigate to="/login" />,
     },
-  
-  
   ]);
 
   if (!isLoading)
