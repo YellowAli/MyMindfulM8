@@ -117,7 +117,7 @@ def login():
 
     user = User.query.filter_by(username=username).first()
 
-    token = jwt.encode({'user': user, 'exp': datetime.datetime.now(
+    token = jwt.encode({'user': user.id, 'exp': datetime.datetime.now(
     ) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'])
 
     if user and user.check_password(password):
