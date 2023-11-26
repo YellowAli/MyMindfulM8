@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
+import Home from "./Home";
 import { useState } from "react";
 
 function App() {
@@ -17,12 +18,16 @@ function App() {
       element: <Navigate to={`/${currentForm}`} replace />,
     },
     {
-      path: "login",
+      path: "/login",
       element: <Login setCurrentForm={setCurrentForm} />,
     },
     {
-      path: "register",
+      path: "/register",
       element: <Register setCurrentForm={setCurrentForm} />,
+    },
+    {
+      path: "/home",
+      element: <Home setCurrentForm={setCurrentForm} />,
     },
     // other routes...
   ]);
@@ -30,6 +35,8 @@ function App() {
   const toggleForm = () => {
     setCurrentForm(currentForm === 'login' ? 'register' : 'login');
   }
+
+  
 
   return (
     <div className="App">
