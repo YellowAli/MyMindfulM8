@@ -51,19 +51,35 @@ function App() {
     // protect these routes when done
     {
       path: "/home",
-      element: <Home setIsAuthenticated={setIsAuthenticated} />,
+      element: isAuthenticated ? (
+        <Home setIsAuthenticated={setIsAuthenticated} />
+      ) : (
+        <Navigate to="/login" replace />
+      ),
     },
     {
       path: "/mental",
-      element: <Mental setIsAuthenticated={setIsAuthenticated} />,
+      element: isAuthenticated ? (
+        <Mental setIsAuthenticated={setIsAuthenticated} />
+      ) : (
+        <Navigate to="/login" replace />
+      ),
     },
     {
       path: "/social",
-      element: <Social setIsAuthenticated={setIsAuthenticated} />,
+      element: isAuthenticated ? (
+        <Social setIsAuthenticated={setIsAuthenticated} />
+      ) : (
+        <Navigate to="/login" replace />
+      ),
     },
     {
       path: "/physical",
-      element: <Physical setIsAuthenticated={setIsAuthenticated} />,
+      element: isAuthenticated ? (
+        <Physical setIsAuthenticated={setIsAuthenticated} />
+      ) : (
+        <Navigate to="/login" replace />
+      ),
     },
   ]);
 
