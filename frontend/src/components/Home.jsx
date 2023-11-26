@@ -13,6 +13,7 @@ function Home() {
       <h1>Welcome Back</h1>
     </div>
       
+      
       <div className="Card1-Container">
         <div className="Card1">
           <img src={image} className="card-img-top" alt="Card 1" />
@@ -22,7 +23,7 @@ function Home() {
             <p className="card-text">Prioritizing mental health is essential for overall well-being, as it significantly influences our thoughts, emotions, and behaviors,impacting our ability to lead fulfilling lives.</p>
             <button className='MentalHealthLink' onClick={() => navigate('/pg1')}>Start your Journey</button>
         </div>
-        </div>
+      
 
         <div className="Card2">
           <img src={image2} className="card-img-top" alt="Card 2" />
@@ -38,9 +39,11 @@ function Home() {
           <div className="card-body">
             <h3 className="card-title">Social Health</h3>
             <p className="card-text">"Cultivating a social life adds joy and connection to your journey. It's the heart of memorable moments, support in tough times, and the essence of a well-rounded, fulfilling life."</p>
-            <button className='SocialHealthLink' onClick={() => navigate('/pg1')}>Start your Journey</button>
+            <button className='SocialHealthLink' onClick={() => navigate('/pg3')}>Start your Journey</button>
         </div>
       </div>
+      </div>
+      <div><button className='Logout' onClick={() => navigate('/login')}>Logout</button></div>
     </>
   );
 }
