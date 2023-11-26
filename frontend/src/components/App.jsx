@@ -52,19 +52,19 @@ function App() {
     // protect these routes when done
     {
       path: "/home",
-      element: <Home />,
+      element: <Home setIsAuthenticated={setIsAuthenticated} />,
     },
     {
       path: "/pg1",
-      element: <Page1 />,
+      element: <Page1 setIsAuthenticated={setIsAuthenticated} />,
     },
     {
       path: "/pg2",
-      element: <Page2 />,
+      element: <Page2 setIsAuthenticated={setIsAuthenticated} />,
     },
     {
       path: "/pg3",
-      element: <Page3 />,
+      element: <Page3 setIsAuthenticated={setIsAuthenticated} />,
     },
   ]);
 
