@@ -1,4 +1,4 @@
-.container {
+.container2 {
     font-family: 'Arial', sans-serif;
     color: black;
     display: flex;
@@ -6,129 +6,59 @@
     min-height: 100vh;
     justify-content: flex-start;
     text-align: center;
-    position: relative;
-    top: 200px;
   }
-
-  .real-container {
-    position: relative;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .Affirmations
-  {
-  align-items: center;
-  justify-content: center;
-  padding:2rem;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 550px;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0 auto;
-  margin-right: 40px;
-  }
-
-  .Journaling
-  {
-    
-  align-items: center;
-  justify-content: center;
-  padding:2rem;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 550px;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0 auto;
-  }
-
-  .DeepBreathing
-  {
-    position: relative;
-    top:20px;
-  align-items: center;
-  justify-content: center;
-  padding:2rem;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 550px;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0 auto;
-  margin-right: 40px;
-  }
-
-  .Gratitude
-  {
-    position: relative;
-    top:20px;
-  align-items: center;
-  justify-content: center;
-  padding:2rem;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 550px;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0 auto;
-  }
-
   
-  .header-container {
+  .header-container2 {
     position: relative;
     font-size: 40px;
     padding: 5px 0;
-    right: 0%;
+    right: 40%;
     padding-left: 5px;
     padding-right: 5px;
-    margin-top: -150px;
+    margin-top: 20px;
+    border: 3px solid black;
+    border-bottom: 0px;
     animation: slideFromTop 0.5s ease-out forwards;/* Commented out for testing */
   }
   
-  .support {
+  .support2 {
     position: absolute;
     font-size: 20px;
-    left: 450px;
-    top: 2.5%;
+    left: 20px;
+    top: 20%;
     animation: slideFromTop 0.5s ease-out forwards; /* Slide from top animation */
   }
   
+  .focus-container2 {
+    position: relative;
+    top: 100%;
+    right: 40%;
+    font-size: 34px;
+    margin-top: 0px;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    animation: slideFromTop 0.5s ease-out forwards;
+  }
   
-  .icon-container {
+  .icon-container2 {
     position: absolute;
-    right: 20px;
-    top:-170px;
+    right: 50px;
     height: 190px;
     width: 180px;
     animation: float 3s ease-in-out infinite, slideFromRight 0.5s ease-out forwards; /* Float and slide from right animation */
   }
   
-  .heart-icon {
+  .heart-icon2 {
     display: block;
     width: 120%;
     height: 100%;
-    background: url('../Images2/IMG.png') no-repeat center center;
+    background: url('../Images2/download32.png') no-repeat center center;
     background-size: contain;
     animation: float 3s ease-in-out infinite; /* Only apply the floating animation here */
 }
 
-.list-group {
+.list-group2 {
   position: absolute;
   font-size: 20px;
   top: 25%; 
@@ -140,7 +70,7 @@
   animation: slideFromLeft 0.5s ease-out forwards;
 }
 
-.list-group-item {
+.list-group-item2 {
   border-bottom: 3px solid rgb(133, 6, 6);
   display: block;
   clear: both;
@@ -149,7 +79,7 @@
 }
 
 
-.message {
+.message2 {
   display: block; 
   font-size: 18.5px;
   opacity: 1; 
@@ -157,40 +87,40 @@
   animation: slideFromLeft 0.5s ease-out forwards;
 }
 
-.message div {
+.message2 div {
   display: flex;
   align-items: center;
   margin-bottom: 5px; /* Spacing between checklist items */
 }
 
-.message input[type="checkbox"] {
+.message2 input[type="checkbox"] {
   margin-right: 10px; /* Spacing between checkbox and label */
 }
 
-.message label {
+.message2 label {
   font-size: 16px; /* Example font size, adjust as needed */
   color: black; /* Label text color */
 }
 
 /* Delay the animation for each list item */
-.list-group-item:nth-child(1) { animation-delay: 0.3s; }
-.list-group-item:nth-child(2) { animation-delay: 0.3s; }
-.list-group-item:nth-child(3) { animation-delay: 0.6s; }
-.list-group-item:nth-child(4) { animation-delay: 0.6s; }
-.list-group-item:nth-child(5) { animation-delay: 0.9s; }
-.list-group-item:nth-child(6) { animation-delay: 0.9s; }
-.list-group-item:nth-child(7) { animation-delay: 1.2s; }
-.list-group-item:nth-child(8) { animation-delay: 1.2s; }
-.list-group-item:nth-child(9) { animation-delay: 1.5s; }
-.list-group-item:nth-child(10) { animation-delay: 1.5s; }
+.list-group-item2:nth-child(1) { animation-delay: 0.3s; }
+.list-group-item2:nth-child(2) { animation-delay: 0.3s; }
+.list-group-item2:nth-child(3) { animation-delay: 0.6s; }
+.list-group-item2:nth-child(4) { animation-delay: 0.6s; }
+.list-group-item2:nth-child(5) { animation-delay: 0.9s; }
+.list-group-item2:nth-child(6) { animation-delay: 0.9s; }
+.list-group-item2:nth-child(7) { animation-delay: 1.2s; }
+.list-group-item2:nth-child(8) { animation-delay: 1.2s; }
+.list-group-item2:nth-child(9) { animation-delay: 1.5s; }
+.list-group-item2:nth-child(10) { animation-delay: 1.5s; }
 
 
 /* Apply the slideFromLeft animation to each list item */
-.list-group-item {
+.list-group-item2 {
   animation: slideFromLeft 0.5s ease-out forwards;
 }
-  
-.btn11 {
+
+.btn22 {
   position: absolute;
   right: 20px; /* Adjust as needed for right margin */
   bottom: 20px; /* Adjust as needed for bottom margin */
@@ -204,20 +134,20 @@
   transition: background-color 0.3s, transform 0.3s; /* Smooth background and transform transition */
 }
 
-.btn11:hover {
+.btn22:hover {
   background-color: #7439db; /* Darker shade on hover */
   transform: translateY(-3px); /* Slight lift on hover */
 }
 
 /* Make sure the button does not overlap content on smaller screens */
 @media (max-width: 600px) {
-  .btn11 {
+  .btn22 {
     right: 10px;
     bottom: 10px;
   }
 }
-
-.btn111 {
+  
+.btn222 {
   position: absolute;
   right: 110px; /* Adjust as needed for right margin */
   bottom: 20px; /* Adjust as needed for bottom margin */
@@ -231,19 +161,18 @@
   transition: background-color 0.3s, transform 0.3s; /* Smooth background and transform transition */
 }
 
-.btn111:hover {
+.btn222:hover {
   background-color: #7439db; /* Darker shade on hover */
   transform: translateY(-3px); /* Slight lift on hover */
 }
 
 /* Make sure the button is responsive and doesn't overlap content on smaller screens */
 @media (max-width: 600px) {
-  .btn111 {
+  .btn222 {
     left: 10px;
     top: 10px;
   }
 }
-
   /* Keyframes for the slide-in animations */
   @keyframes slideFromTop {
     from { transform: translateY(-100%); opacity: 0; }
@@ -264,17 +193,4 @@
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
-}
-
-.line-container {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 20px; /* Adjust spacing between lines */
-}
-
-.checkboxes
-{
-  position: relative;
-  bottom: -40px;
 }
