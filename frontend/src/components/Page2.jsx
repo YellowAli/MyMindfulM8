@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Page2.css";
+import "../styles/Page1.css";
 import axios from "axios";
 
 function Page2({ setIsAuthenticated }) {
@@ -21,7 +22,7 @@ function Page2({ setIsAuthenticated }) {
   };
 
   // Array of support messages
-  const supportMessages5 = [
+  const supportMessages = [
     "Let's try to turn that frown upside down.",
     "Every day is a fresh start.",
     "You are stronger than you think.",
@@ -29,61 +30,140 @@ function Page2({ setIsAuthenticated }) {
     "Take it one step at a time.",
   ];
 
+  const supportMessages2 = [
+    "Meditate For 5 minutes",
+    "Afternoon Walk or Workout",
+    "10 Minutes of Mindful Reflection",
+    "10 Minutes of Social Media Detox",
+    "Make Bed",
+  ];
+
+  const supportMessages3 = [
+    "Meditate For 5 minutes",
+    "Afternoon Walk or Workout",
+    "10 Minutes of Mindful Reflection",
+    "10 Minutes of Social Media Detox",
+    "Make Bed",
+  ];
+
+  const supportMessages4 = [
+    "Meditate For 5 minutes",
+    "Afternoon Walk or Workout",
+    "10 Minutes of Mindful Reflection",
+    "10 Minutes of Social Media Detox",
+    "Make Bed",
+  ];
+
   // State to hold the current support message
-  const [currentSupportMessage5, setCurrentSupportMessage5] = useState("");
+  const [currentSupportMessage, setCurrentSupportMessage] = useState("");
+  const [currentSupportMessage2, setCurrentSupportMessage2] = useState("");
+  const [currentSupportMessage3, setCurrentSupportMessage3] = useState("");
+  const [currentSupportMessage4, setCurrentSupportMessage4] = useState("");
   // Function to select a random support message
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * supportMessages5.length);
-    setCurrentSupportMessage5(supportMessages5[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * supportMessages.length);
+    setCurrentSupportMessage(supportMessages[randomIndex]);
   }, []); // The empty array ensures this effect runs only once when the component mounts
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * supportMessages2.length);
+    setCurrentSupportMessage2(supportMessages2[randomIndex]);
+  }, []);
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * supportMessages2.length);
+    setCurrentSupportMessage3(supportMessages3[randomIndex]);
+  }, []);
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * supportMessages2.length);
+    setCurrentSupportMessage4(supportMessages4[randomIndex]);
+  }, []);
   return (
-    <div className="container2">
-      <div className="header-container2">Your current focus is:</div>
-      <div className="focus-container2">
-        <div className="focus2">Social health</div>
+    <div className="container">
+      <div className="header-container">
+        Your Current Focus is: <br />
+        Social health
       </div>
-      <div className="icon-container2">
-        <div className="heart-icon2"></div>
+      <div className="icon-container">
+        <div className="heart-icon"></div>
       </div>
-      <div className="support2">{currentSupportMessage5}</div>
-      <ul className="list-group2">
-        <li className="list-group-item2">Kindness</li>
-        <el className="message2">
-          Kindness has been linked to enhanced social relationships and
+      <div className="support">{currentSupportMessage}</div>
+
+      <div className="real-container">
+        <div className="line-container">
+          <div className="Affirmations">
+            <div className="card-body">
+              <h3 className="card-title">Kindness</h3>
+              <p className="card-text">
+                "Kindness has been linked to enhanced social relationships and
           increased feelings of social support, promoting a sense of belonging
           and reducing feelings of isolation.
-        </el>
-        <li className="list-group-item2">Call A Friend</li>
-        <el className="message2">
-          Calling a friend can reinforce social bonds and provide a sense of
+"
+              </p>
+            </div>
+          </div>
+
+          <div className="Journaling ">
+            <div className="card-body">
+              <h3 className="card-title">Call A Friend</h3>
+              <p className="card-text">
+                "Calling a friend can reinforce social bonds and provide a sense of
           connection, which is crucial for social well-being and combating
           loneliness.
-        </el>
-        <li className="list-group-item2">Volunteer</li>
-        <el className="message2">
-          Volunteering is associated with a stronger sense of community,
+"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="line-container">
+          <div className="DeepBreathing">
+            <div className="card-body">
+              <h3 className="card-title">Volunteer</h3>
+              <p className="card-text">
+                "Volunteering is associated with a stronger sense of community,
           improved empathy, and heightened feelings of social contribution,
           fostering a network of mutual aid and support.
-        </el>
-        <li className="list-group-item2">Digital Detox</li>
-        <el className="message2">
-          A digital detox can lead to improved face-to-face interactions and
+"
+              </p>
+            </div>
+          </div>
+
+          <div className="Gratitude">
+            <div className="card-body">
+              <h3 className="card-title">Digital-Detox</h3>
+              <p className="card-text">
+                "A digital detox can lead to improved face-to-face interactions and
           presence, allowing for deeper social engagements and reducing the
           sense of social fatigue.
-        </el>
-        <li className="list-group-item2">Family Time</li>
-        <el class="message2">
-          Family time is vital for reinforcing personal bonds, offering
-          emotional support, and creating a shared sense of identity and
-          belonging within one's social sphere.
-        </el>
-      </ul>
-      <button className="btn22" onClick={() => navigate("/home")}>
+"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="checkboxes">
+          <div>
+            <input type="checkbox" id="goal1" name="goal1" />
+            <label for="goal1">{currentSupportMessage2}</label>
+          </div>
+          <div>
+            <input type="checkbox" id="goal2" name="goal2" />
+            <label for="goal2">{currentSupportMessage3}</label>
+          </div>
+          <div>
+            <input type="checkbox" id="goal3" name="goal3" />
+            <label for="goal3">{currentSupportMessage4}</label>
+          </div>
+          </div>
+          </div>
+
+      <div className="buttons">
+      <button className="btn11" onClick={() => navigate("/home")}>
         Home
       </button>
-      <button className="btn222" onClick={handleLogout}>
+      <button className="btn111" onClick={handleLogout}>
         Log Out
       </button>
+      </div>
     </div>
   );
 }
