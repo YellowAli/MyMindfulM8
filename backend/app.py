@@ -20,15 +20,18 @@ CORS(app, resourses=CORS_RESOURCES)
 # create database
 db = SQLAlchemy(app)
 
-# Association table to match many-to-many relationship between users and tasks
-user_tasks_association = db.Table(
-    'user_tasks_association',
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('task_id', db.Integer, db.ForeignKey('task.id')),
-    db.Column('completed', db.Boolean, default=False)
-)
 
 # Models
+# Association model to match many-to-many relationship between users and tasks
+
+class UserTasksAssociation(db.Model):
+    __tablename__ = 'user_tasks_association'
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
+    task_id = db.Column(db.Integer, db.ForeignKey('task.id'), primary_key=True)
+    completed = db.Column(db.Boolean, default=False)
+
+    def __repr__(self):
+        return f'<UserTasksAssociation(__tablename__={self.__tablename__}, user_id={self.user_id}, task_id={self.task_id}, completed={self.completed})>'
 
 
 class User(db.Model, UserMixin):
@@ -38,7 +41,7 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String, nullable=False)
 
     # establish relationship between user and task
-    tasks = db.relationship('Task', secondary=user_tasks_association,
+    tasks = db.relationship('Task', secondary='user_tasks_association',
                             backref=db.backref('users', lazy='dynamic'))
 
     # might store area_of_focus but idk if I need it yet
@@ -129,7 +132,8 @@ def logout():
 def get_tasks():
     if 'user_id' in session:
         user = db.session.get(User, session['user_id'])
-        tasks = [{'id': task.id, 'type': task.type, 'text': task.text} for task in user.tasks]
+        tasks = [{'id': task.id, 'type': task.type, 'text': task.text}
+                 for task in user.tasks]
 
         return jsonify({'tasks': tasks})
 
@@ -143,8 +147,8 @@ def mark_task_complete(task_id):
         task = db.session.get(Task, task_id)
 
         if task and task in user.tasks:
-            task_user_association = user_tasks_association.query.filter_by(
-                user_id=user.id, task_id=task_id).first()
+            task_user_association = UserTasksAssociation.query.filter_by(
+                user_id=user.id, task_id=task.id).first()
             task_user_association.completed = True
             db.session.commit()
             return jsonify({'message': f'Task {task_id} marked complete for user {user.id}'}), 200
@@ -158,7 +162,7 @@ def mark_task_complete(task_id):
 def get_completed_tasks():
     if 'user_id' in session:
         user = db.session.get(User, session['user_id'])
-        completed_tasks = user_tasks_association.query.filter_by(
+        completed_tasks = UserTasksAssociation.query.filter_by(
             user_id=user.id, completed=True).all()
 
         task_data = []
