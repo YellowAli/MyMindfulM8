@@ -12,10 +12,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'hello'
 
 # CORS configuration
-CORS_ALLOW_HEADERS = 'Content-Type'
-CORS_RESOURCES = {r'/api/*': {'origins': 'http://localhost:5173'}}
+# CORS_ALLOW_HEADERS = 'Content-Type'
+# CORS_RESOURCES = {r'/api/*': {'origins': 'http://localhost:5173'}}
 
-CORS(app, resourses=CORS_RESOURCES)
+CORS(app)
 
 # create database
 db = SQLAlchemy(app)
