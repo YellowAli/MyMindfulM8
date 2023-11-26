@@ -1,9 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Page1.css";
+import axios from "axios";
 
-function Page1() {
+function Page1({ setIsAuthenticated }) {
   const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post("http://localhost:5000/api/logout");
+
+      if (response.status == 200) {
+        localStorage.removeItem("authToken");
+        setIsAuthenticated(false);
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   // Array of support messages
   const supportMessages = [
     "Let's try to turn that frown upside down.",
@@ -47,7 +63,6 @@ function Page1() {
     const randomIndex = Math.floor(Math.random() * supportMessages.length);
     setCurrentSupportMessage(supportMessages[randomIndex]);
   }, []); // The empty array ensures this effect runs only once when the component mounts
-
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * supportMessages2.length);
     setCurrentSupportMessage2(supportMessages2[randomIndex]);
@@ -135,13 +150,10 @@ function Page1() {
             <input type="checkbox" id="goal3" name="goal3" />
             <label for="goal3">{currentSupportMessage4}</label>
           </div>
-        </div>
-      </div>
-
       <button className="btn11" onClick={() => navigate("/home")}>
         Home
       </button>
-      <button className="btn111" onClick={() => navigate("/login")}>
+      <button className="btn111" onClick={handleLogout}>
         Log Out
       </button>
     </div>

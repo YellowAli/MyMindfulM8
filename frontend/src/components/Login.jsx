@@ -5,6 +5,7 @@ import axios from "axios";
 const Login = ({ setIsAuthenticated }) => {
   const [user, setUserName] = useState("");
   const [pass, setPass] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate(); // Hook to navigate programmatically
 
   const handleSubmit = async (e) => {
@@ -17,16 +18,13 @@ const Login = ({ setIsAuthenticated }) => {
       });
 
       if (response.status == 200) {
+        setErrorMessage("");
         localStorage.setItem("authToken", response.data.token);
         setIsAuthenticated(true);
         navigate("/home");
-      } else if (response.status == 401) {
-        alert("Invalid credentials");
-      } else {
-        alert("Login failed");
       }
     } catch (error) {
-      console.error(error);
+      setErrorMessage(error.response.data.message)
     }
   };
 
@@ -54,6 +52,7 @@ const Login = ({ setIsAuthenticated }) => {
           name="password"
           required
         />
+        <span>{errorMessage}</span>
         <button type="submit">Login</button>
       </form>
       <button className="link-btn" onClick={() => navigate("/register")}>
