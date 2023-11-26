@@ -84,15 +84,15 @@ function Page1() {
             <el class="message">
             <div>
             <input type="checkbox" id="goal1" name="goal1" />
-            <label for="goal1">Goal 1 Description</label>
+            <label for="goal1">{currentSupportMessage2}</label>
             </div>
             <div>
             <input type="checkbox" id="goal2" name="goal2" />
-            <label for="goal2">Goal 2 Description</label>
+            <label for="goal2">{currentSupportMessage3}</label>
             </div>
             <div>
             <input type="checkbox" id="goal3" name="goal3" />
-            <label for="goal3">Goal 3 Description</label>
+            <label for="goal3">{currentSupportMessage4}</label>
             </div>
             </el>
             </ul>
