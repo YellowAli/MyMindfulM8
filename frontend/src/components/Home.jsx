@@ -29,7 +29,7 @@ function Home() {
           <div className="card-body">
             <h3 className="card-title">Physical Health</h3>
             <p className="card-text">"Taking care of your body is key for a happy life. It gives you energy helps you bounce back from challenges, and lets you make the most out of every day."</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
+            <button className='PhysicalHealthLink' onClick={() => navigate('/pg2')}>Start your Journey</button>
         </div>
         </div>
 
@@ -38,7 +38,7 @@ function Home() {
           <div className="card-body">
             <h3 className="card-title">Social Health</h3>
             <p className="card-text">"Cultivating a social life adds joy and connection to your journey. It's the heart of memorable moments, support in tough times, and the essence of a well-rounded, fulfilling life."</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
+            <button className='SocialHealthLink' onClick={() => navigate('/pg1')}>Start your Journey</button>
         </div>
         </div>
         </div>
