@@ -49,21 +49,22 @@ function App() {
       path: "/register",
       element: <Register />,
     },
+    // protect these routes when done
     {
       path: "/home",
-      element: isAuthenticated ? <Home /> : <Navigate to="/login" />,
+      element: <Home />,
     },
     {
       path: "/pg1",
-      element: isAuthenticated ? <Page1 /> : <Navigate to="/login" />,
+      element: <Page1 />,
     },
     {
       path: "/pg2",
-      element: isAuthenticated ? <Page2 /> : <Navigate to="/login" />,
+      element: <Page2 />,
     },
     {
       path: "/pg3",
-      element: isAuthenticated ? <Page3 /> : <Navigate to="/login" />,
+      element: <Page3 />,
     },
   ]);
 
