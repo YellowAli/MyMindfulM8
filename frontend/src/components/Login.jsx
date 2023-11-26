@@ -1,33 +1,64 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Login = () => {
-    const [user, setUserName] = useState('');
-    const [pass, setPass] = useState('');
-    const navigate = useNavigate(); // Hook to navigate programmatically
+const Login = ({ setIsAuthenticated }) => {
+  const [user, setUserName] = useState("");
+  const [pass, setPass] = useState("");
+  const navigate = useNavigate(); // Hook to navigate programmatically
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        
-        
-        // add logic here
-
+    try {
+      const response = await axios.post("http://localhost:5000/api/login", {
+        username: user,
+        password: pass,
+      });
+      if (response.status == 200) {
+        setIsAuthenticated(true);
+        navigate("/home");
+      } else if (response.status == 401) {
+        alert("Invalid credentials");
+      } else {
+        alert("Login failed");
+      }
+    } catch (error) {
+      console.error(error);
     }
+  };
 
-    return (
-        <div className="auth-form-container">
-            <h2>Login</h2>
-            <form className='login-form' onSubmit={handleSubmit}>
-                <label htmlFor="user">Username</label>
-                <input value={user} onChange={(e) => setUserName(e.target.value)} type="text" placeholder="username" id="user" name="user" required />
-                <label htmlFor="password">Password</label>
-                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*********" id="password" name="password" required />
-                <button type='submit'>Login</button>
-            </form>
-            <button className='link-btn' onClick={() => navigate('/register')}>Don't have an account? Register here</button>
-        </div>
-    );
+  return (
+    <div className="auth-form-container">
+      <h2>Login</h2>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <label htmlFor="user">Username</label>
+        <input
+          value={user}
+          onChange={(e) => setUserName(e.target.value)}
+          type="text"
+          placeholder="username"
+          id="user"
+          name="user"
+          required
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          value={pass}
+          onChange={(e) => setPass(e.target.value)}
+          type="password"
+          placeholder="*********"
+          id="password"
+          name="password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      <button className="link-btn" onClick={() => navigate("/register")}>
+        Don't have an account? Register here
+      </button>
+    </div>
+  );
 };
 
 export default Login;
