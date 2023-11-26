@@ -1,122 +1,133 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(79deg, #7439db, #C66fbc 48%, #f7944d);
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-position: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(79deg, #7439db, #c66fbc 48%, #f7944d);
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
 }
 
 .auth-form-container label {
-    display: block; /* Ensures the label takes up the full width for centering */
-    color: black; /* Adjust the color to match your design */
-    margin-bottom: .5rem; /* Provide some space below the label */
-    text-align: center; /* Centers the text within the label */
-    width: 100%; /* Ensures the label is the full width of its container */
+  display: block; /* Ensures the label takes up the full width for centering */
+  color: black; /* Adjust the color to match your design */
+  margin-bottom: 0.5rem; /* Provide some space below the label */
+  text-align: center; /* Centers the text within the label */
+  width: 100%; /* Ensures the label is the full width of its container */
 }
 
 .auth-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding:2rem;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    /* Removed flex-grow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  /* Removed flex-grow */
 }
 
-
 @media screen and (min-width: 600px) {
-    .auth-form-container {
-        padding: 5rem; /* More padding on larger screens */
-    }
+  .auth-form-container {
+    padding: 5rem; /* More padding on larger screens */
+  }
 }
 
 /* Ensuring input labels are visible and aligned correctly */
 label {
-    text-align: left;
-    padding: 0.25rem 0;
-    color: black; /* Make the text color white for visibility */
-    margin-left: 0.1rem; /* Add a small margin to the left of the label */
+  text-align: left;
+  padding: 0.25rem 0;
+  color: black; /* Make the text color white for visibility */
+  margin-left: 0.1rem; /* Add a small margin to the left of the label */
 }
 
 input[type="text"],
 input[type="password"],
 input[type="tel"], /* Add this if not already present */
-input[type="email"] { /* You might want to add this too for email inputs */
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.75);
-    color: #7439db;
-    /* Other shared styles for inputs */
+input[type="email"] {
+  /* You might want to add this too for email inputs */
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  color: #7439db;
+  /* Other shared styles for inputs */
 }
 
 button {
-    margin: 0.5rem 0; /* Added margin for spacing */
-    padding: 1rem; /* Adjust padding */
-    border: none;
-    background-color: #7439db; /* Background color for the button */
-    color: white; /* Text color for the button */
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold; /* Make the text bold */
-    text-transform: uppercase; /* Uppercase text for the button */
-    letter-spacing: 1px; /* Spacing between letters */
+  margin: 0.5rem 0; /* Added margin for spacing */
+  padding: 1rem; /* Adjust padding */
+  border: none;
+  background-color: #7439db; /* Background color for the button */
+  color: white; /* Text color for the button */
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold; /* Make the text bold */
+  text-transform: uppercase; /* Uppercase text for the button */
+  letter-spacing: 1px; /* Spacing between letters */
 }
 
-button:hover, button:focus {
-    background-color: #f7944d; /* Changes background on hover/focus */
-    /* Changed color to a contrasting one for visibility */
-    color: #000; /* Changes text color on hover/focus to black */
+button:hover,
+button:focus {
+  background-color: #f7944d; /* Changes background on hover/focus */
+  /* Changed color to a contrasting one for visibility */
+  color: #000; /* Changes text color on hover/focus to black */
 }
 
 .link-btn {
-    background: none;
-    color: white;
-    text-decoration: underline;
-    transition: color 0.3s ease-in-out;
+  background: none;
+  color: white;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
 }
 
-.link-btn:hover, .link-btn:focus {
-    background-color: #f7944d; /* Changes background on hover/focus */
-    /* Changed color to a contrasting one for visibility */
-    color: #000; /* Changes text color on hover/focus to black */
+.link-btn:hover,
+.link-btn:focus {
+  background-color: #f7944d; /* Changes background on hover/focus */
+  /* Changed color to a contrasting one for visibility */
+  color: #000; /* Changes text color on hover/focus to black */
 }
 
 .register-link {
-    background: none;
-    color: white;
-    text-decoration: underline;
-    transition: color 0.3s ease-in-out;
+  background: none;
+  color: white;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
 }
 
-.register-link:hover, .register-link:focus {
-    background-color: #f7944d; /* Changes background on hover/focus */
-    /* Changed color to a contrasting one for visibility */
-    color: #000; /* Changes text color on hover/focus to black */
+.register-link:hover,
+.register-link:focus {
+  background-color: #f7944d; /* Changes background on hover/focus */
+  /* Changed color to a contrasting one for visibility */
+  color: #000; /* Changes text color on hover/focus to black */
 }
 
 :focus-visible {
-    outline: 2px dashed white; /* Improves visibility for keyboard users */
+  outline: 2px dashed white; /* Improves visibility for keyboard users */
+}
+
+.title {
+  margin-right: auto;
+  padding-left: 2rem;
+  font-size: 3rem;
+  color: rgb(0, 0, 0);
 }

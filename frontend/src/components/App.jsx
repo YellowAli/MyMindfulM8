@@ -86,6 +86,7 @@ function App() {
   if (!isLoading)
     return (
       <div className="App">
+        <h1 className="title">MyMindfulM8</h1>
         <RouterProvider router={router} />
       </div>
     );
