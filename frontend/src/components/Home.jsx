@@ -1,61 +1,44 @@
 import React from "react";
 import "../styles/Home.css";
-import image from "../Images/img.png";
+import image from "../Images/Group-716-1.png"
+import image2 from "../Images/healthy-fitness-girl-doing-aerobics-in-the-gym-illustration-in-doodle-style-png.png"
+import image3 from "../Images/happy-friends-posing-together-png.webp"
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="header">
-        <h1>Welcome back, What would you like to Work on Today</h1>
-      </div>
-
+    <div className="header">
+      <h1>Welcome Back</h1>
+    </div>
+      
       <div className="Card1-Container">
         <div className="Card1">
           <img src={image} className="card-img-top" alt="Card 1" />
           <div className="card-body">
-            <h3 className="card-title">Mental Health</h3>
-            <p className="card-text">
-              Prioritizing mental health is essential for overall well-being,
-              <br /> as it significantly influences our thoughts, emotions, and
-              behaviors,
-              <br /> impacting our ability to lead fulfilling lives.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <h3 className="card-title">Mental Health</h3> 
           </div>
+            <p className="card-text">Prioritizing mental health is essential for overall well-being, as it significantly influences our thoughts, emotions, and behaviors,impacting our ability to lead fulfilling lives.</p>
+            <button className='MentalHealthLink' onClick={() => navigate('/pg1')}>Start your Journey</button>
+        </div>
         </div>
 
         <div className="Card2">
-          <img src="../Images/img.png" className="card-img-top" alt="Card 2" />
+          <img src={image2} className="card-img-top" alt="Card 2" />
           <div className="card-body">
-            <h3 className="card-title">Mental Health</h3>
-            <p className="card-text">
-              Prioritizing mental health is essential for overall well-being,
-              <br /> as it significantly influences our thoughts, emotions, and
-              behaviors,
-              <br /> impacting our ability to lead fulfilling lives.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
+            <h3 className="card-title">Physical Health</h3>
+            <p className="card-text">"Taking care of your body is key for a happy life. It gives you energy helps you bounce back from challenges, and lets you make the most out of every day."</p>
+            <a href="#" className="btn btn-primary">Go somewhere</a>
+        </div>
         </div>
 
         <div className="Card3">
-          <img src="../Images/img.png" className="card-img-top" alt="Card 2" />
+          <img src={image3} className="card-img-top" alt="Card 2" />
           <div className="card-body">
-            <h3 className="card-title">Mental Health</h3>
-            <p className="card-text">
-              Prioritizing mental health is essential for overall well-being,
-              <br /> as it significantly influences our thoughts, emotions, and
-              behaviors,
-              <br /> impacting our ability to lead fulfilling lives.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
+            <h3 className="card-title">Social Health</h3>
+            <p className="card-text">"Cultivating a social life adds joy and connection to your journey. It's the heart of memorable moments, support in tough times, and the essence of a well-rounded, fulfilling life."</p>
+            <a href="#" className="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </>

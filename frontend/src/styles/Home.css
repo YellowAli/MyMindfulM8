@@ -20,6 +20,8 @@
 .Card1-Container{
     display: flex;
   justify-content: space-between;
+  position: relative;
+  top:-30px
 }
 
 .Card2 {
@@ -30,7 +32,7 @@
     padding:2rem;
     border: none;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(192, 50, 50, 0.353);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 450px;
@@ -61,6 +63,23 @@
 
 .header {
     position: relative;
-    top: -150px; /* Adjust the value as needed */
-    font-family:'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    top: -20px; /* Adjust the value as needed */
+    font-size: 50px;
+    color:whitesmoke;
+    font-family:Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .Card1 img {
+    width: 100%; /* Make sure the image fills the container */
+    
+  }
+
+  .Card2 img {
+    width: 80%; /* Make sure the image fills the container */
+    
+  }
+
+  Card3 img {
+    width: 200%; /* Make sure the image fills the container */
+    
   }
